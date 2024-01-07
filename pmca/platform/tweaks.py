@@ -128,8 +128,11 @@ class LanguageTweak(BackupTweak):
   return self._getLangs(region[region.index('_')+1:])
 
  def onValue(self):
-  # return self._getLangs('ALLLANG')
-  return self._getLangs('E32')
+  region = self._backup.getRegion()
+  if region[region.index('_')+1:] == 'J1':
+    return self._getLangs('JP-MOD')
+  else:
+    return self._getLangs('ALLLANG')
 
  def strValue(self):
   val = bytearray(self.read())
