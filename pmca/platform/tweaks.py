@@ -128,7 +128,8 @@ class LanguageTweak(BackupTweak):
   return self._getLangs(region[region.index('_')+1:])
 
  def onValue(self):
-  return self._getLangs('ALLLANG')
+  # return self._getLangs('ALLLANG')
+  return self._getLangs('E32')
 
  def strValue(self):
   val = bytearray(self.read())
